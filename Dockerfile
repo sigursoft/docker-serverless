@@ -8,7 +8,7 @@ RUN apt-get install -y \
     jq \
     nano
 
-RUN npm install serverless@1.35.1 -g
+RUN npm install serverless@1.38.0 -g
 
 EXPOSE 8000
 
