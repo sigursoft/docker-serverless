@@ -9,10 +9,12 @@ RUN apt-get install -y \
 
 RUN npm install serverless@1.52.2 -g
 
+RUN adduser --disabled-login --gecos '' sls
+WORKDIR /home/sls
+
+USER sls
+
 EXPOSE 8000
-
-VOLUME ["/usr/src/shared"]
-
-WORKDIR /usr/src
+VOLUME ["/home/sls/shared"]
 
 ENTRYPOINT ["/bin/bash"]
